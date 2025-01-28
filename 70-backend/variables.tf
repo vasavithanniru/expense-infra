@@ -23,3 +23,7 @@ variable "backend_tags" {
 variable "zone_name" {
   default = "vasavi.online"
 }
+
+variable "ami_id" {
+  default = "ami-09c813fb71547fc4f"
+}

@@ -2,7 +2,7 @@ module "backend" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
   name = local.resource_name
-  ami = "ami-09c813fb71547fc4f"
+  ami = var.ami_id
 
   instance_type          = "t3.micro"
   vpc_security_group_ids = [local.backend_sg_id]
