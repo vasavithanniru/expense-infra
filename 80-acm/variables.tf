@@ -14,12 +14,11 @@ variable "common_tags" {
   }
 }
 
-variable "backend_tags" {
-    default = {
-        Component = "backend"
-    }
-}
 
 variable "zone_name" {
   default = "vasavi.online"
+}
+
+variable "zone_id" {
+  default = "Z04805221YTNAM0LILIIJ"
 }

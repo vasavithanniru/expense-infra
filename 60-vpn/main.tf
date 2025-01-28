@@ -1,14 +1,14 @@
 resource "aws_key_pair" "openvpn" {
   key_name   = "openvpn"
-  public_key = file("~/vpn/openvpn.pub")  #importing the private key
-  # ~/vpn/openvpn.pub
+  public_key = file("~/.ssh/openvpn.pub")  #importing the private key
+  # ~/.ssh/openvpn.pub
 }
 
 module "vpn" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   key_name = aws_key_pair.openvpn.key_name
   name = local.resource_name
-  ami = data.aws_ami.vasavi-devops.id
+  ami = data.aws_ami.vpn.id
 
   instance_type          = "t3.micro"
   vpc_security_group_ids = [local.vpn_sg_id]

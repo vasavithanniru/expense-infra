@@ -29,3 +29,7 @@ variable "common_tags" {
         Terraform = "true"
     }
 }
+
+variable "is_peering_required" {
+    default = true
+}

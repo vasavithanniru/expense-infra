@@ -14,12 +14,16 @@ variable "common_tags" {
   }
 }
 
-variable "backend_tags" {
+variable "frontend_tags" {
     default = {
-        Component = "backend"
+        Component = "frontend"
     }
 }
 
 variable "zone_name" {
   default = "vasavi.online"
+}
+
+variable "ami" {
+  default = "ami-09c813fb71547fc4f"
 }
